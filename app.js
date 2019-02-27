@@ -6,7 +6,7 @@ const express = require('express'),
       app = express(),
       masterUser = 'username',
       masterPass = 'password',
-      port = process.env.PORT || 3001;
+      port = process.env.NODE_ENV === 'production' ? 3000 : 3001;
 
 app.set('view engine', 'ejs')
 app.use(express.static(path.join(__dirname, 'public')));
