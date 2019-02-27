@@ -81,6 +81,21 @@ npm --prefix public/components/reveal.js/ install
 ./node_modules/.bin/grunt --gruntfile public/components/reveal.js/Gruntfile.js
 ```
 
+## Configure
+
+```
+cp .env.example .env
+```
+
+Update `HOST` to reflect the domain from which this app is served:
+
+```
+NAME=Revealer - Reveal.js multiplexer
+HOST=http://example.com/
+USER=user
+PASS=password
+```
+
 ## Deploy
 
 The _Dockerized_ production is meant to be deployed behind an `nginx-proxy`/`lets-encrypt` combo:
