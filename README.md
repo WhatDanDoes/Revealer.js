@@ -33,8 +33,25 @@ $ npm install && bower install
 $ grunt
 ```
 
-Master login at `http://localhost:3001`.
+### Configure
+
+```
+cp .env.example .env
+```
+
+The default configuration looks like this:
+
+```
+NAME=Revealer - Reveal.js multiplexer
+HOST=http://localhost:3000/
+USER=user
+PASS=password
+```
+
+Update `HOST` if not serving on localhost, otherwise `socket.io` won't know where to connect.
+
+
+Master login at `http://localhost:3001`. (credentials as declared in `.env`).
 
 Clients go to `http://localhost:3000/client` to see the presentation.
 
-**Note : You may need to update `host` in `public/js/config.js` when it's not in localhost.**
