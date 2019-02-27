@@ -21,7 +21,7 @@ Thanks to [shameerc](https://github.com/shameerc/Revealer.js.git) for the awesom
 ```
 $ git clone https://github.com/WhatDanDoes/Revealer.js.git
 $ npm install && bower install
-$ grunt
+$ ./node_modules/.bin/grunt
 ```
 
 ## Build
@@ -30,7 +30,7 @@ Reveal.js, as downloaded by `bower`, doesn't build the required Javascript or CS
 
 ```
 npm --prefix public/components/reveal.js/ install
-grunt --gruntfile public/components/reveal.js/Gruntfile.js
+./node_modules/.bin/grunt --gruntfile public/components/reveal.js/Gruntfile.js
 ```
 
 ### Configure
@@ -78,7 +78,7 @@ Reveal.js, as downloaded by `bower`, doesn't build the required Javascript or CS
 
 ```
 npm --prefix public/components/reveal.js/ install
-grunt --gruntfile public/components/reveal.js/Gruntfile.js
+./node_modules/.bin/grunt --gruntfile public/components/reveal.js/Gruntfile.js
 ```
 
 ## Deploy
