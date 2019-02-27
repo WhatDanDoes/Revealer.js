@@ -19,12 +19,12 @@ const auth = require('express-basic-auth')({
   challenge: true
 });
 
-app.get('/', auth, function (req, res) {
-  res.render('index');
+app.get('/', function (req, res) {
+  res.render('client');
 });
 
-app.get('/client', function (req, res) {
-  res.render('client');
+app.get('/master', auth, function (req, res) {
+  res.render('index');
 });
 
 const server = http.createServer(app).listen(port, function () {
