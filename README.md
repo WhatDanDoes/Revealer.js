@@ -1,4 +1,4 @@
-## Revealer.js
+# Revealer.js
 
 A multi-user Reveal.js presentation server using Express.js and Socket.IO.
 
@@ -14,7 +14,15 @@ The original project from which this was forked is falling out of date. This for
 - Uses `.env` to protect master authentication info
 - Easy Docker deployment
 
-Thanks to [shameerc](https://github.com/WhatDanDoes/Revealer.js.git) for the awesome software.
+Thanks to [shameerc](https://github.com/shameerc/Revealer.js.git) for the awesome software.
+
+## Development
+
+```
+$ git clone https://github.com/WhatDanDoes/Revealer.js.git
+$ npm install && bower install
+$ grunt
+```
 
 ## Build
 
@@ -23,14 +31,6 @@ Reveal.js, as downloaded by `bower`, doesn't build the required Javascript or CS
 ```
 npm --prefix public/components/reveal.js/ install
 grunt --gruntfile public/components/reveal.js/Gruntfile.js
-```
-
-## Development
-
-```
-$ git clone https://github.com/shameerc/Revealer.js.git
-$ npm install && bower install
-$ grunt
 ```
 
 ### Configure
@@ -55,3 +55,38 @@ Master login at `http://localhost:3001`. (credentials as declared in `.env`).
 
 Clients go to `http://localhost:3000/client` to see the presentation.
 
+# Production
+
+## App
+
+Clone:
+
+```
+git clone https://github.com/WhatDanDoes/Revealer.js.git
+```
+
+In the application directory:
+
+```
+cd Revealer.js
+NODE_ENV=production npm install && bower install
+```
+
+## Build
+
+Reveal.js, as downloaded by `bower`, doesn't build the required Javascript or CSS. Before running the dev server, build the downloaded software:
+
+```
+npm --prefix public/components/reveal.js/ install
+grunt --gruntfile public/components/reveal.js/Gruntfile.js
+```
+
+## Deploy
+
+The _Dockerized_ production is meant to be deployed behind an `nginx-proxy`/`lets-encrypt` combo:
+
+```
+docker-compose -f docker-compose.prod.yml up -d
+```
+
+Edit `docker-compose.prod.yml` with host and Let's Encrypt info.
