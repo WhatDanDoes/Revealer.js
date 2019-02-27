@@ -10,7 +10,7 @@
     "tests"
   ],
   "dependencies": {
-    "reveal.js": "~2.5.0"
+    "reveal.js": "~3.7.0"
   },
   "authors": [
     "shameer <shamer806@gmail.com>"
