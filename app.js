@@ -5,22 +5,23 @@ var express = require('express'),
     app = express(),
     masterUser = 'username',
     masterPass = 'password',
-    port = process.env.PORT || 3000;
+    port = process.env.PORT || 3001;
 
 
-app.configure(function () {
-    app.use(express.static(path.join(__dirname, 'public')));
-});
+app.use(express.static(path.join(__dirname, 'public')));
 
 // Authentication
-var auth = express.basicAuth(masterUser, masterPass);
-
+const auth = require('express-basic-auth')({
+  users: { 'admin': 'supersecret' },
+  challenge: true
+});
+ 
 app.get('/', auth, function (req, res) {
-    res.sendfile(__dirname + '/views/index.html');
+    res.sendFile(__dirname + '/views/index.html');
 });
 
 app.get('/client', function (req, res) {
-    res.sendfile(__dirname + '/views/client.html');
+    res.sendFile(__dirname + '/views/client.html');
 });
 
 var server = http.createServer(app).listen(port, function () {
