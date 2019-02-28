@@ -8,9 +8,8 @@ This is the complete code used in the http://www.sitepoint.com/create-multi-user
 
 The original project from which this was forked is falling out of date. This fork:
 
-- Updates some dependencies
-- Makes better use of Express partials
-- Deploys master and client versions from different defaults
+- Updates package dependencies
+- DRYs out code with EJS partials
 - Uses `.env` to protect master authentication info
 - Easy Docker deployment
 
@@ -44,8 +43,8 @@ The default configuration looks like this:
 ```
 NAME=Revealer - Reveal.js multiplexer
 HOST=http://localhost:3000/
-USER=user
-PASS=password
+USERNAME=user
+PASSWORD=password
 ```
 
 Update `HOST` if not serving on localhost, otherwise `socket.io` won't know where to connect.
@@ -92,8 +91,8 @@ Update `HOST` to reflect the domain from which this app is served:
 ```
 NAME=Revealer - Reveal.js multiplexer
 HOST=http://example.com/
-USER=user
-PASS=password
+USERNAME=user
+PASSWORD=password
 ```
 
 ## Deploy
