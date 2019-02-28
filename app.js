@@ -24,7 +24,7 @@ app.get('/', function (req, res) {
 });
 
 app.get('/master', auth, function (req, res) {
-  res.render('index');
+  res.render('master');
 });
 
 const server = http.createServer(app).listen(port, function () {
