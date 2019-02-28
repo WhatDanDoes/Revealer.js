@@ -1,6 +1,7 @@
 <%- include('_partials/head') -%>
-<%- include('slides') -%>
-  <script src="components/reveal.js/js/reveal.min.js"></script>
+  <%- include('slides') -%>
+  <script src="/components/headjs/dist/1.0.0/head.min.js"></script>
+  <script src="/components/reveal.js/js/reveal.min.js"></script>
   <!-- Socket.io client-->
   <script src="/socket.io/socket.io.js"></script>
   <script>
@@ -8,11 +9,16 @@
   </script>
   <script>
       (function(){
-  
         Reveal.initialize({
-          history: true
+          history: true,
+          dependencies: [
+            { src: '/components/reveal.js/plugin/markdown/marked.js' },
+            { src: '/components/reveal.js/plugin/markdown/markdown.js' },
+            { src: '/components/reveal.js/plugin/notes/notes.js', async: true },
+            { src: '/components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+          ]
         });
-        
+
         var socket = io.connect(host);
   
         socket.on('slidechanged', function (data) {

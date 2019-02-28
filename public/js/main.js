@@ -1,7 +1,14 @@
 (function(){
   var socket = io.connect(host);
+
   Reveal.initialize({
-    history: true
+    history: true,
+    dependencies: [
+      { src: '/components/reveal.js/plugin/markdown/marked.js' },
+      { src: '/components/reveal.js/plugin/markdown/markdown.js' },
+      { src: '/components/reveal.js/plugin/notes/notes.js', async: true },
+      { src: '/components/reveal.js/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+    ]
   });
 
   /** start - only in master.js **/
