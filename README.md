@@ -15,12 +15,13 @@ The original project from which this was forked is falling out of date. This for
 
 Thanks to [shameerc](https://github.com/shameerc/Revealer.js.git) for the awesome software.
 
-## Development
+# Development
+
+## Setup
 
 ```
 $ git clone https://github.com/WhatDanDoes/Revealer.js.git
 $ npm install && bower install
-$ ./node_modules/.bin/grunt
 ```
 
 ## Build
@@ -32,7 +33,7 @@ npm --prefix public/components/reveal.js/ install
 ./node_modules/.bin/grunt --gruntfile public/components/reveal.js/Gruntfile.js
 ```
 
-### Configure
+## Configure
 
 ```
 cp .env.example .env
@@ -49,6 +50,11 @@ PASSWORD=password
 
 Update `HOST` if not serving on localhost, otherwise `socket.io` won't know where to connect.
 
+## Serve
+
+```
+$ ./node_modules/.bin/grunt
+```
 
 Master login at `http://localhost:3001`. (credentials as declared in `.env`).
 
