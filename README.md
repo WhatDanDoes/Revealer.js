@@ -20,8 +20,8 @@ Thanks to [shameerc](https://github.com/shameerc/Revealer.js.git) for the awesom
 ## Setup
 
 ```
-$ git clone https://github.com/WhatDanDoes/Revealer.js.git
-$ npm install && bower install
+git clone https://github.com/WhatDanDoes/Revealer.js.git
+npm install && bower install
 ```
 
 ## Build
@@ -53,7 +53,7 @@ Update `HOST` if not serving on localhost, otherwise `socket.io` won't know wher
 ## Serve
 
 ```
-$ ./node_modules/.bin/grunt
+./node_modules/.bin/grunt
 ```
 
 Master login at `http://localhost:3001`. (credentials as declared in `.env`).
