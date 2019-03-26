@@ -74,7 +74,7 @@ In the application directory:
 
 ```
 cd Revealer.js
-NODE_ENV=production npm install && bower install
+npm install && bower install
 ```
 
 ## Build
