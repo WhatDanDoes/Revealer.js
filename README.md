@@ -56,9 +56,9 @@ Update `HOST` if not serving on localhost, otherwise `socket.io` won't know wher
 ./node_modules/.bin/grunt
 ```
 
-Master login at `http://localhost:3001`. (credentials as declared in `.env`).
+Master login at `http://localhost:3000/master`. (credentials as declared in `.env`).
 
-Clients go to `http://localhost:3000/client` to see the presentation.
+Clients go to `http://localhost:3000` to see the presentation.
 
 # Production
 
